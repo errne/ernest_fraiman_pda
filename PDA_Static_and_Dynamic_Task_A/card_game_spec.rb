@@ -34,7 +34,6 @@ class CardGameTest < MiniTest::Test
     cardgame1 = CardGame.new()
     card1 = Card.new("diamond", 3)
     card2 = Card.new("heart", 3)
-    #assert_equal("Cards are of the equal value", cardgame1.highest_card(card1, card2))
     assert_nil(cardgame1.highest_card(card1, card2))
   end
 
