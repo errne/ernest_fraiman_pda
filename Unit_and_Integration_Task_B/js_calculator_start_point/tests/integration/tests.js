@@ -46,4 +46,22 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('-7')
   })
 
+  it ('should display decimal numbers', function () {
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number1')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('0.1111111111111111')
+  })
+  it ('should output "Not a number" if a number is divided by zero', function () {
+    running_total = element(by.css('#running_total'));
+    element(by.css('#number5')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('Not a number')
+
+  })
+
 });
